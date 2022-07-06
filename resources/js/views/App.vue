@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p>Prova</p>
         <WorkInProgress />
     </div>
 </template>
