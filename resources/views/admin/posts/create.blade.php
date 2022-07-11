@@ -34,14 +34,17 @@
                 @endforeach
             </select>
         </div>
-        <div class="form-group">
-            <label for="tag_id">Categoria</label>
-            <select class="form-control" name="tag_id" id="tag_id">
-                <option value="">Nessuna</option>
-                @foreach ($tags as $tag)
-                    <option value="{{ $tag->id }}" {{ old('tag_id') == $tag->id ? 'selected' : '' }}>{{ $tag->name }}</option>
-                @endforeach
-            </select>
+
+        <div class="my-3">
+            <h4>Tags</h4>
+            @foreach ($tags as $tag)
+                <div class="form-check">
+                    <input name="tags[]" class="form-check-input" type="checkbox" value="{{ $tag->id }}" id="tag-{{ $tag->id }}" {{ in_array( $tag->id, old('tags', [])) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="tag-{{ $tag->id }}">
+                        {{ $tag->name }}
+                    </label>
+                </div>
+            @endforeach
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
