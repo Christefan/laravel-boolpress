@@ -34,6 +34,15 @@
                 @endforeach
             </select>
         </div>
+        <div class="form-group">
+            <label for="tag_id">Categoria</label>
+            <select class="form-control" name="tag_id" id="tag_id">
+                <option value="">Nessuna</option>
+                @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}" {{ old('tag_id') == $tag->id ? 'selected' : '' }}>{{ $tag->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 @endsection

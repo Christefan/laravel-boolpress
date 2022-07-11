@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategorieToPostTable extends Migration
+class CreateTagToPostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateCategorieToPostTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorie_to_post', function (Blueprint $table) {
-            $table->unsignedBigInteger('categorie_id');
-            $table->foreign('categorie_id')
+        Schema::create('tag_to_post', function (Blueprint $table) {
+            $table->unsignedBigInteger('tag_id');
+            $table->foreign('tag_id')
                 ->references('id')
-                ->on('categories');
+                ->on('tags');
+
 
             $table->unsignedBigInteger('post_id');
             $table->foreign('post_id')
                 ->references('id')
                 ->on('posts');
 
-            $table->primary(['categorie_id', 'post_id']);
+            $table->primary(['tag_id', 'post_id']);
         });
     }
 
@@ -35,6 +36,6 @@ class CreateCategorieToPostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorie_to_post');
+        Schema::dropIfExists('tag_to_post');
     }
 }
