@@ -1,8 +1,7 @@
 <template>
     <div>
         <p>Prova</p>
-        <WorkInProgress />
-        <Post />
+        <router-view></router-view>
     </div>
 </template>
 
