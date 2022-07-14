@@ -1,11 +1,12 @@
 <template>
     <div class="container">
-        <h1>Home tramite router</h1>
+    <div >
+        <h1>Blog tramite router</h1>
     </div>
 </template>
 <script>
 export default {
-    name: "Home"
+    name: "Blog"
 }
 </script>
 <template>

@@ -1,19 +1,12 @@
 <template>
     <div>
         <p>Prova</p>
-        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import Post from '../components/Post.vue';
-import WorkInProgress from '../components/WorkInProgress.vue';
 export default {
-    name: 'App',
-    components: {
-        WorkInProgress,
-        Post
-    }
+    name: 'App'
 }
 </script>
 
